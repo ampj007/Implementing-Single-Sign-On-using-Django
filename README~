@@ -1,0 +1,22 @@
+ Implementing Single Sign On (SSO)
+===================================
+Django application that provides Single Sign-on feature for your project. 
+
+Cas_test is a django app that enables single sign on from one Django application to another. Login are made using a basic authentication.Single sign-on (SSO)is user authentication process that permits a user to enter one name and password in order to access multiple applications.
+
+Installation
+=======================
+The dependent package django-mama-cas 
+
+Install with pip:
+
+'$ pip install django-mama-cas'
+
+
+DEMO
+=====
+username : test
+password : test
+
+
+

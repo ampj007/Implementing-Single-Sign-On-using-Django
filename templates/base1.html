@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> {% block title %} {% endblock %}</title>
+    <style type="text/css">
+	body {
+		text-align:center;
+	}
+	#page {
+		width:960px;
+		text-align:center;
+		margin:10px auto 20px auto;
+		background:#0c0c0c;
+	}
+	#sidebar {
+		float:left;
+		width:200px;
+		border:3px solid #f00;
+		background-color:#FC3;
+		font-style:inherit;
+	}
+	#content{
+		float:right;
+		width:600px;
+		border:3px solid #f00;
+		background-color:#FC3
+		padding:10px;
+	}
+    </style>
+<script>
+	setTimeout(function(){
+  		window.location.reload(1);
+	}, 5000);
+</script>
+    </head>
+    
+    <body bgcolor="#FFFFFF">
+    <div id="page">
+    <font color="#00FF00"  style="font-size:36px"><marquee>CAS test</marquee></font>
+    <div id="sidebar">
+		{% block sidebar %}
+	 
+             <font color="#00FFCC" size="+3"><a href="/account/logout">LogOut</a></font>
+               
+				{% endblock %}
+                </div>
+                <div id="content">
+               	{% block content %}
+                
+                {% endblock %}
+                </div>
+                </div>
+    </body>
+     </html>

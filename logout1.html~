@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+ You have successfully logged out.
+    <a href="/app2/login">  Click here </a>  to login
+
+{% endblock %}
+	

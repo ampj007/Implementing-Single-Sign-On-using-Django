@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> {% block title %} {% endblock %}</title>
+    <style type="text/css">
+	body {
+		text-align:center;
+	}
+	#page {
+		width:960px;
+		text-align:center;
+		margin:10px auto 20px auto;
+		background:#0c0c0c;
+	}
+	#sidebar {
+		float:right;
+		width:200px;
+		border:1px solid 3f00;
+	}
+	#content{
+		float:left;
+		width:600px;
+		border:1px solid #f00;
+		padding:10px;
+	}
+    </style>
+<script>
+	setTimeout(function(){
+  		window.location.reload(1);
+	}, 5000);
+</script>
+    </head>
+    
+    <body bgcolor="#FFFFCC">
+    <div id="page">
+    <font color="#00FF00"  style="font-size:36px"><marquee>Cas test</marquee></font>
+    <div id="sidebar">
+		{% block sidebar %}
+    	<font color="#00FFCC" size="+3"><a href="/login" target="_blank">Cas login</a></font><br/>
+             <font color="#00FFCC" size="+3"><a href="/account/login" target="_blank">APP1</a></font><br/>
+               &nbsp;&nbsp;<font color="#00FFCC" size="+3"><a href="/app2/login" target="_blank">APP2</a></font>
+				{% endblock %}
+                </div>
+                <div id="content">
+               	{% block content %}
+                
+                {% endblock %}
+                </div>
+                </div>
+    </body>
+     </html>
