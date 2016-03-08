@@ -38,7 +38,8 @@
 		{% block sidebar %}
     	<font color="#00FFCC" size="+3"><a href="/login" target="_blank">Cas login</a></font><br/>
              <font color="#00FFCC" size="+3"><a href="/account/login" target="_blank">APP1</a></font><br/>
-               &nbsp;&nbsp;<font color="#00FFCC" size="+3"><a href="/app2/login" target="_blank">APP2</a></font>
+              <font color="#00FFCC" size="+3"><a href="/app2/login" target="_blank">APP2</a></font><br/>
+   <font color="#00FFCC" size="+3"><a href="/app3/login" target="_blank">APP3</a></font>
 				{% endblock %}
                 </div>
                 <div id="content">

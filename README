@@ -15,8 +15,36 @@ Install with pip:
 
 DEMO
 =====
+Role: Super user,Staff, Active user
 username : test
 password : test
+
+Role: Staff, Active user
+username : test1
+password : test1
+
+Role: Active user
+username : test2
+password : test2
+
+
+ 
+
+Usage
+=====
+In this project there are 3 type of role. They are
+	
+	* Super user
+	* Staff
+	* Active user	
+
+Each user has different roles. Server has three application(APP1, APP2, APP3). Each application include different authorization.
+
+	*APP1 - Super user
+	*APP2 - Super user,Staff
+	*APP3 - Super user,Staff, Active user
+
+Only authorized user can access the  particular application.  
 
 
 

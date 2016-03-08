@@ -9,12 +9,12 @@ from django.views.generic.base import TemplateView
 
 
 def login(request):
-    if request.user.is_staff:
-        return HttpResponseRedirect('/app2/loggedin')
+    if request.user.is_active:
+        return HttpResponseRedirect('/app3/loggedin')
     else:
         c ={}
         c.update(csrf(request))
-        return render_to_response('login1.html',c)
+        return render_to_response('login2.html',c)
 
 def auth_view(request):
 
@@ -24,18 +24,18 @@ def auth_view(request):
     
     if user is not None:
         auth.login(request, user)
-        if request.user.is_staff:
-            return HttpResponseRedirect('/app2/loggedin')
+        if request.user.is_active:
+            return HttpResponseRedirect('/app3/loggedin')
         else:
         	return render_to_response('invalid_auth.html')
     else:
         return render_to_response('invalid_login.html')
 
 def loggedin(request):
-    if not(request.user.is_staff):
-        return HttpResponseRedirect('/app2/logout')
-    return render_to_response('loggedin1.html',{'full_name': ((request.user.first_name)+(request.user.last_name))})
- 
+    if not(request.user.is_active):
+        return HttpResponseRedirect('/app3/logout')
+    return render_to_response('loggedin2.html',{'full_name': ((request.user.first_name)+(request.user.last_name))})
+   
 def logout(request):
     auth.logout(request)
-    return render_to_response('logout1.html')
+    return render_to_response('logout2.html')
