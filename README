@@ -46,5 +46,13 @@ Each user has different roles. Server has three application(APP1, APP2, APP3). E
 
 Only authorized user can access the  particular application.  
 
+Deploy and Run the Webserver:
+
+$ python manage.py runserver
+
+Open the project:
+
+To access the url "http://localhost:8000/"
+
 
 
