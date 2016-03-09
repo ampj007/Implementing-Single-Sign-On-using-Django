@@ -1,0 +1,8 @@
+{
+  "name": "CAS example",
+  "description": "It is an implementation of single sign on.",
+  "image": "heroku/python",
+  "repository": "https://github.com/ampj007/Implementing-Single-Sign-On-using-Django",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}

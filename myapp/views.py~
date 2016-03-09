@@ -11,8 +11,8 @@ from django.views.generic.base import TemplateView
 #     return request.user.is_active #and request.user.is_staff
 
 def login(request):
-    import pdb;pdb.set_trace()
-    if request.user.is_active:
+    #import pdb;pdb.set_trace()
+    if request.user.is_superuser:
         return HttpResponseRedirect('/account/loggedin')
     else:
         c ={}
@@ -27,21 +27,20 @@ def auth_view(request):
     
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/account/loggedin')
+        if request.user.is_superuser:
+            return HttpResponseRedirect('/account/loggedin')
+        else:
+        	return render_to_response('invaild_auth.html')
     else:
-        return HttpResponseRedirect('/account/invalid')
+        return render_to_response('invalid_login.html')
 
 def home(request):
     return render_to_response('base.html')
 
 def loggedin(request):
-    if not(request.user.is_active):
+    if not(request.user.is_superuser):
         return HttpResponseRedirect('/account/logout')
     return render_to_response('loggedin.html',{'full_name': ((request.user.first_name)+(request.user.last_name))})
-    
-    
-def invalid_login(request):
-    return render_to_response('invalid_login.html')
     
 def logout(request):
     auth.logout(request)
